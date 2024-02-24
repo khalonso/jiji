@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación a cenar</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://i.pinimg.com/564x/be/e5/7e/bee57e894108c815196aad8ffea7afbf.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Ajustar imagen al tamaño del contenedor */
+    background-position: center; /* Centrar la imagen */
+    color: black; /* Color del texto */
+    font-family: Arial, sans-serif; /* Fuente del texto */
+  }
+  
+  h1 {
+    font-size: 48px; /* Tamaño del texto */
+    text-align: center;
+    font-style: italic; /* Letra en cursiva */
+    font-weight: normal; /* Peso normal */
+    margin-bottom: 20px; /* Espacio inferior */
+  }
+
+  .opciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .opcion {
+    margin: 0 10px;
+    padding: 15px 25px;
+    font-size: 24px; /* Tamaño del texto */
+    font-weight: bold; /* Letra negrita */
+    cursor: pointer;
+    transition: transform 0.2s; /* Transición al hacer hover */
+  }
+
+  .si {
+    background-color: purple; /* Color morado */
+    color: white;
+  }
+
+  .no {
+    background-color: pink; /* Color rosa */
+    color: white;
+  }
+
+  .opcion:hover {
+    transform: scale(1.1); /* Escala al hacer hover */
+  }
+
+  @keyframes move {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(10px, 10px); }
+    50% { transform: translate(0, 0); }
+    75% { transform: translate(-10px, -10px); }
+    100% { transform: translate(0, 0); }
+  }
+</style>
+</head>
+<body>
+<h1>¿Quieres ir a cenar conmigo hoy?</h1>
+<div class="opciones">
+  <div class="opcion si" onclick="mostrarMensaje('Te quiero mucho ❤️')">Sí</div>
+  <div class="opcion no" onclick="moverCuadro()">No</div>
+</div>
+<script>
+function mostrarMensaje(mensaje) {
+  alert(mensaje);
+}
+
+function moverCuadro() {
+  var cuadro = document.querySelector('.no');
+  cuadro.style.animation = 'move 0.5s 5';
+  cuadro.addEventListener('animationend', function() {
+    alert('Aunque no quieras, vamos a ir. ¡Te quiero mucho! 😊');
+  });
+}
+</script>
+</body>
+</html>
